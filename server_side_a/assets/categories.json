@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "Photography"
+    },
+    {
+        "id": 2,
+        "name": "Lighting"
+    },
+    {
+        "id": 3,
+        "name": "Portraits"
+    },
+    {
+        "id": 4,
+        "name": "Nature"
+    },
+    {
+        "id": 5,
+        "name": "Travel"
+    },
+    {
+        "id": 6,
+        "name": "Urban"
+    }
+]

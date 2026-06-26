@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Search Filter</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 40px;
+            background: #f3f4f6;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            margin-bottom: 24px;
+        }
+
+        .search-box {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        input {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 12px 20px;
+            border: none;
+            background: #2563eb;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            padding: 14px;
+            margin-bottom: 10px;
+            background: #f9fafb;
+            border-radius: 8px;
+        }
+
+        .empty {
+            color: #666;
+            font-style: italic;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Product Search Filter</h1>
+
+    <div class="search-box">
+
+        <input
+                type="text"
+                id="searchInput"
+                placeholder="Search product..."
+        >
+
+        <button id="searchButton">
+            Search
+        </button>
+
+    </div>
+
+    <ul id="productList">
+        <li>Notebook</li>
+        <li>Mouse</li>
+        <li>Keyboard</li>
+        <li>Monitor</li>
+        <li>Headphones</li>
+    </ul>
+</div>
+
+<script>
+
+    const products = [
+        "Notebook",
+        "Mouse",
+        "Keyboard",
+        "Monitor",
+        "Headphones"
+    ];
+
+    const elementList = document.getElementById('productList');
+    const searchValue = document.getElementById('searchInput');
+    const buttonSearch = document.getElementById('searchButton');
+    buttonSearch.addEventListener('click', () => {
+        elementList.innerHTML = '';
+        if (searchValue.value === '') {
+            products.forEach(s => {
+                elementList.innerHTML += `<li>${s}</li>`
+            })
+            return null;
+        }
+        const productSearched = products.filter(p => {
+            return p.toLowerCase().includes(searchValue.value.toLowerCase());
+        })
+        if (productSearched.length === 0) {
+            elementList.innerHTML += `<li class="empty">No product found.</li>`
+            return null;
+        }
+        productSearched.forEach(s => {
+            elementList.innerHTML += `<li>${s}</li>`
+        })
+    })
+</script>
+
+</body>
+</html>

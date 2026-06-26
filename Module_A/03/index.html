@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: gray;
+            overflow: hidden;
+        }
+
+        button {
+            background: transparent;
+            border: 6px solid orange;
+            font-weight: bolder;
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            padding: 1rem 2rem;
+            font-size: 2rem;
+            color: orange;
+            transition: .4s;
+            width: 180px;
+        }
+
+        button:hover {
+            background: orange;
+            color: white;
+            width: 220px;
+        }
+
+        .arrow {
+            width: 25px;
+            opacity: 0;
+            transition: opacity .2s, transform .4s;
+            transform: translateX(-30px);
+        }
+
+        button:hover .arrow {
+            opacity: 1;
+            transform: translateX(10px);
+        }
+    </style>
+</head>
+<body>
+<button>
+    <span>
+    Button
+    </span>
+    <img src="right-arrow.svg" alt="" class="arrow">
+</button>
+</body>
+</html>

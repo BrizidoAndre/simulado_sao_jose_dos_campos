@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Image Gallery</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <style>
+        .col-2 img:hover {
+            cursor: pointer;
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body>
+<main class="container py-5">
+    <div class="shadow p-3 rounded-3">
+        <h1>Dynamic Image Gallery</h1>
+        <img src="images/image1.jpg" alt="Image's preview" class="rounded-3 w-100" id="preview">
+        <div class="row mt-2">
+            <div class="col-2">
+                <img src="images/image1.jpg" alt="Images preview to toggle"
+                     class="w-100 rounded-2 border border-3 border-primary">
+            </div>
+            <div class="col-2">
+                <img src="images/image2.jpg" alt="Images preview to toggle" class="w-100 rounded-2">
+            </div>
+            <div class="col-2">
+                <img src="images/image3.jpg" alt="Images preview to toggle" class="w-100 rounded-2">
+            </div>
+            <div class="col-2">
+                <img src="images/image4.jpg" alt="Images preview to toggle" class="w-100 rounded-2">
+            </div>
+            <div class="col-2">
+                <img src="images/image5.jpg" alt="Images preview to toggle" class="w-100 rounded-2">
+            </div>
+        </div>
+    </div>
+</main>
+<script>
+    const colsElements = document.querySelectorAll('.col-2');
+    const previewElement = document.getElementById('preview');
+    colsElements.forEach(col => {
+        col.addEventListener('click', () => {
+            colsElements.forEach(c => {
+                const image = c.querySelector('img')
+                image.classList.remove('border');
+                image.classList.remove('border-primary');
+                image.classList.remove('border-3');
+            })
+            const image = col.querySelector('img')
+            previewElement.src = image.src;
+            image.classList.add('border');
+            image.classList.add('border-3');
+            image.classList.add('border-primary');
+        })
+    })
+</script>
+</body>
+</html>

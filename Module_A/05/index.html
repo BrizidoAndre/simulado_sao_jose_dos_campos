@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .content {
+            border-radius: .5rem;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            background: black;
+            padding: 6rem 1rem;
+        }
+
+        img {
+            position: relative;
+            z-index: 4;
+            width: 80%;
+            object-fit: cover;
+        }
+
+        .blue-ball {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            border-radius: 50%;
+            background: blue;
+            transform: translate(-50%, -50%) scale(0);
+            transition: .4s;
+            z-index: 2;
+            width: 60px;
+            height: 60px;
+        }
+
+        .content:hover > .blue-ball {
+            transform: translate(-50%, -50%) scale(10);
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+    <img src="Vancouver-white.svg" alt="Vancouver logo">
+    <div class="blue-ball"></div>
+</div>
+</body>
+</html>

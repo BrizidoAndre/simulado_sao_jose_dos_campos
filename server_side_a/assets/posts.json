@@ -1,0 +1,122 @@
+[
+    {
+        "id": 1,
+        "title": "Mastering Natural Light in Photography",
+        "category_id": 2,
+        "status": "Published",
+        "image": "01.jpg",
+        "content": "Natural light is one of the most powerful elements in photography. Learning how to work with sunlight during different times of the day can dramatically improve composition, colors and atmosphere in your images."
+    },
+    {
+        "id": 2,
+        "title": "Beginner Guide to Portrait Photography",
+        "category_id": 3,
+        "status": "Published",
+        "image": "02.jpg",
+        "content": "Portrait photography is about capturing emotion and personality. Understanding framing, posing and lighting helps photographers create more authentic and expressive portraits."
+    },
+    {
+        "id": 3,
+        "title": "Urban Photography Composition Tips",
+        "category_id": 6,
+        "status": "Draft",
+        "image": "03.jpg",
+        "content": "Urban photography offers endless creative possibilities. Using leading lines, reflections and architectural symmetry can transform ordinary city scenes into cinematic photographs."
+    },
+    {
+        "id": 4,
+        "title": "How to Capture Better Landscape Photos",
+        "category_id": 4,
+        "status": "Published",
+        "image": "04.jpg",
+        "content": "Landscape photography requires patience, planning and understanding natural light. Choosing the right angle and foreground elements can create more depth and visual impact."
+    },
+    {
+        "id": 5,
+        "title": "Travel Photography Essentials",
+        "category_id": 5,
+        "status": "Published",
+        "image": "05.jpg",
+        "content": "Travel photography helps preserve memories and experiences from different places around the world. Lightweight gear and storytelling compositions are essential for successful travel images."
+    },
+    {
+        "id": 6,
+        "title": "The Art of Black and White Photography",
+        "category_id": 1,
+        "status": "Published",
+        "image": "06.jpg",
+        "content": "Black and white photography emphasizes contrast, texture and emotion. Removing color allows photographers to focus on composition and storytelling."
+    },
+    {
+        "id": 7,
+        "title": "How to Shoot Cinematic Street Photography",
+        "category_id": 6,
+        "status": "Published",
+        "image": "07.jpg",
+        "content": "Street photography becomes more cinematic when photographers use shadows, reflections and dramatic lighting to create atmosphere in urban environments."
+    },
+    {
+        "id": 8,
+        "title": "Camera Settings Every Beginner Should Know",
+        "category_id": 1,
+        "status": "Published",
+        "image": "08.jpg",
+        "content": "Understanding ISO, shutter speed and aperture is essential for beginner photographers. Mastering these settings improves exposure and creative control."
+    },
+    {
+        "id": 9,
+        "title": "Creating Emotional Portrait Photography",
+        "category_id": 3,
+        "status": "Published",
+        "image": "09.jpg",
+        "content": "Emotional portraits rely on authentic expressions, soft lighting and connection between the photographer and subject."
+    },
+    {
+        "id": 10,
+        "title": "Best Locations for Landscape Photography",
+        "category_id": 4,
+        "status": "Draft",
+        "image": "10.jpg",
+        "content": "Landscape photography often depends on location scouting and timing. Mountains, forests and lakes provide powerful natural compositions."
+    },
+    {
+        "id": 11,
+        "title": "Minimalist Photography Composition Guide",
+        "category_id": 1,
+        "status": "Published",
+        "image": "11.jpg",
+        "content": "Minimalist photography focuses on simplicity, negative space and clean visual balance to create striking compositions."
+    },
+    {
+        "id": 12,
+        "title": "Golden Hour Photography Techniques",
+        "category_id": 2,
+        "status": "Published",
+        "image": "12.jpg",
+        "content": "Golden hour lighting creates warm tones and soft shadows that enhance portraits, landscapes and outdoor photography."
+    },
+    {
+        "id": 13,
+        "title": "How to Build a Travel Photography Portfolio",
+        "category_id": 5,
+        "status": "Published",
+        "image": "13.jpg",
+        "content": "A strong travel portfolio combines storytelling, cultural moments and environmental details to capture authentic experiences."
+    },
+    {
+        "id": 14,
+        "title": "Night Photography for Beginners",
+        "category_id": 2,
+        "status": "Draft",
+        "image": "14.jpg",
+        "content": "Night photography requires stability, long exposure techniques and understanding artificial light sources to achieve sharp and dramatic images."
+    },
+    {
+        "id": 15,
+        "title": "Using Reflections in Creative Photography",
+        "category_id": 6,
+        "status": "Published",
+        "image": "15.jpg",
+        "content": "Reflections in windows, puddles and mirrors can add symmetry and artistic depth to urban photography compositions."
+    }
+]

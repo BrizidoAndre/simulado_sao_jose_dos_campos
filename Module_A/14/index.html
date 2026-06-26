@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Average Calculator</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        .d-none {
+            display: none;
+        }
+
+        body {
+            margin: 0;
+            padding: 40px;
+            background: #f3f4f6;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            margin-bottom: 24px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            margin-bottom: 16px;
+        }
+
+        button {
+            padding: 12px 20px;
+            border: none;
+            background: #2563eb;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        .result {
+            margin-top: 24px;
+            padding: 16px;
+            border-radius: 8px;
+            background: #f9fafb;
+        }
+
+        .approved {
+            color: #166534;
+            font-weight: bold;
+        }
+
+        .failed {
+            color: #991b1b;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Student Average Calculator</h1>
+
+    <input
+            type="text"
+            id="gradesInput"
+            placeholder="Enter grades separated by commas (Example: 8,7,9,6)"
+            value="1,2,3,a"
+    >
+
+    <button id="calculateButton">
+        Calculate Average
+    </button>
+
+    <div class="result" id="result">
+        <p>
+            <strong>Grades:</strong>
+            <span id="grades">
+            1,2,3
+            </span>
+        </p>
+
+        <p>
+            <strong>Average:</strong>
+            <span id="average">2.00</span>
+        </p>
+
+        <p class="approved">
+            Approved
+        </p>
+        <p class="failed">
+            Failed
+        </p>
+        <p class="failed failed-one">
+            Please enter at least one grade.
+        </p>
+        <p class="failed failed-invalid">
+            Invalid grades.
+        </p>
+    </div>
+
+</div>
+
+<script>
+    const failed = document.querySelector('.failed');
+    const invalidElement = document.querySelector('.failed.failed-invalid');
+    const failedElement = document.querySelector('.failed.failed-one')
+    const approvedElement = document.querySelector('.approved');
+    const averageElement = document.getElementById('average');
+    const gradeElement = document.getElementById('grades');
+    const inputElement = document.getElementById('gradesInput');
+    const calcButton = document.getElementById('calculateButton');
+    calcButton.addEventListener('click', () => {
+        const gradeString = inputElement.value;
+        if (gradeString === '') {
+            approvedElement.classList.add('d-none');
+            failed.classList.add('d-none');
+            failedElement.classList.remove('d-none');
+            invalidElement.classList.add('d-none');
+            return null;
+        }
+        const grades = gradeString.split(',').map(e => e.trim()).map(e => parseInt(e)).filter(e => !isNaN(e));
+        let total = 0;
+        let avg = 0;
+        if (grades.length === 0) {
+            approvedElement.classList.add('d-none');
+            failed.classList.add('d-none');
+            failedElement.classList.add('d-none');
+            invalidElement.classList.remove('d-none');
+            return null;
+        }
+        grades.forEach(grade => {
+            total += grade;
+        })
+        avg = total / grades.length;
+        averageElement.innerHTML = avg.toFixed(2);
+        gradeElement.innerHTML = grades.join(',');
+        hasApproved(avg >= 7);
+    })
+
+    function hasApproved(approved) {
+        if (approved) {
+            approvedElement.classList.remove('d-none');
+            failedElement.classList.add('d-none');
+            invalidElement.classList.add('d-none');
+            failed.classList.add('d-none');
+        } else {
+            approvedElement.classList.add('d-none');
+            failed.classList.remove('d-none');
+            failedElement.classList.add('d-none');
+            invalidElement.classList.add('d-none');
+        }
+    }
+
+    failed.classList.add('d-none');
+    approvedElement.classList.add('d-none');
+    failedElement.classList.add('d-none');
+    invalidElement.classList.add('d-none');
+</script>
+
+</body>
+</html>

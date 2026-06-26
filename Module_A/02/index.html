@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        p {
+            text-decoration: underline dotted;
+            position: relative;
+            cursor: pointer;
+        }
+
+        p::after {
+            width: max-content;
+            content: 'Some tolltip text';
+            position: absolute;
+            bottom: 150%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: black;
+            color: white;
+            padding: .5rem 1rem;
+            border-radius: .5rem;
+        }
+
+        p::before {
+            content: '';
+            position: absolute;
+            z-index: 99;
+            bottom: 120%;
+            left: 50%;
+            transform: translateX(-50%);
+            clip-path: polygon(0 0, 100% 0, 50% 100%);
+            background: black;
+            width: 20px;
+            height: 10px;
+        }
+
+        p::after, p::before {
+            display: none;
+        }
+
+        p:hover::after, p:hover::before {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<p>Hover over me</p>
+</body>
+</html>
